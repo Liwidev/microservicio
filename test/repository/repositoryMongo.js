@@ -10,8 +10,16 @@ chai.use(expectToBeAPromise);
 const expect = chai.expect;
 
 describe('repositoryMongo', () => {
-
-    it('Deberia retornar error al intentar conectar a MongoDB', () => {
+    
+    it('Deberia retornar error al intentar conectar a MongoDB', (done) => {
+        function check(done, f) {
+            try {
+                f();
+                done();
+            } catch (e) {
+                done(e);
+            }
+        }
         const repositoryMongo = proxyquire('../../repository/repositoryMongo', {
             mongodb: {
                 MongoClient: {
@@ -34,12 +42,25 @@ describe('repositoryMongo', () => {
             }
         }
         repositoryMongo.getHeroe(req, res);
-        expect(res).to.have.a.property('statusCode', 200);
+
+        setTimeout(function () {
+            check(done, function () {
+                expect(res).to.have.a.property('statusCode', 500);
+            });
+        }, 100);
+
     })
 
-    it('Deberia retornar exito al intentar conectar a MongoDB', () => {
+    it('Deberia retornar exito al intentar conectar a MongoDB', (done) => {
+        function check(done, f) {
+            try {
+                f();
+                done();
+            } catch (e) {
+                done(e);
+            }
+        }
 
-        
         const repositoryMongo = proxyquire('../../repository/repositoryMongo', {
             mongodb: {
                 MongoClient: {
@@ -51,7 +72,7 @@ describe('repositoryMongo', () => {
                                         return callback('', 'docs')
                                     }
                                     const test = {
-                                        toArray : toArray
+                                        toArray: toArray
                                     }
                                     return test
                                 }
@@ -83,8 +104,13 @@ describe('repositoryMongo', () => {
             }
         }
         repositoryMongo.getHeroe(req, res);
-        expect(res).to.have.a.property('statusCode', 200);
-        
+
+        setTimeout(function () {
+            check(done, function () {
+                expect(res).to.have.a.property('statusCode', 200);
+            });
+        }, 100);
+
     })
-    
+
 });
