@@ -1,0 +1,25 @@
+{
+  "name": "expressbech",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.js",
+    "coverage": "istanbul cover _mocha test/**/*.js",
+    "coverage_local": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha test/**/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "events": "^1.1.1",
+    "express": "^4.16.2",
+    "helmet": "^3.9.0",
+    "http-status": "^1.0.1",
+    "mocha": "^4.1.0",
+    "mongodb": "^3.0.1",
+    "morgan": "^1.9.0",
+    "redis": "^2.8.0",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
