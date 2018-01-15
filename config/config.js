@@ -17,7 +17,8 @@ const optionsTwitter = {
 const optionsRedis = {
   port: 11074,
   host: 'redis-11074.c13.us-east-1-3.ec2.cloud.redislabs.com',
-  duracion: 10
+  duracion: 10,
+  password: 'accentureBech'
 }
 
 const optionsMongo = {

@@ -12,7 +12,7 @@ const cache = () => (new Promise((resolve, reject) => {
     } else {
         console.log('Redis - Real');
         clienteRedis = redis.createClient(optionsRedis.port, optionsRedis.host);
-        clienteRedis.auth('accentureBech', function () {
+        clienteRedis.auth(optionsRedis.password, function () {
             console.log('Cliente autenticado existosamente');
         });
         clienteRedis.on('connect', function () {
