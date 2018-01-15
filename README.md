@@ -383,29 +383,31 @@ const res = new response();
 La cobertura es una de las maneras mas visuales de verificar que todas las piesas de nuestro código estan siendo ejecutadas y que no hay código basura. [Istanbul](https://www.npmjs.com/package/istanbul) nos genera usualmente un reporte en HTML el cual se podrá visualizar con mayor claridad la cobertura de nuestro código.
 
 
-## Tree Files
-.<br>
-├── api<br>
-│   └── api.js<br>
-├── config<br>
-│   └── config.js<br>
-├── index.js<br>
-├── mock<br>
-├── package.json<br>
-├── package-lock.json<br>
-├── README.md<br>
-├── repository<br>
-│   ├── repositoryMongo.js<br>
-│   └── repositoryRedis.js<br>
-├── server<br>
-│   └── server.js<br>
-├── service<br>
-│   └── serviceTwiter.js<br>
-└── test<br>
-    ├── repository<br>
-    │   ├── repositoryMongo.js<br>
-    │   └── repositoryRedis.js<br>
-    ├── server<br>
-    │   └── server.js<br>
-    └── service<br>
+## Arbol de Archivos
+```
+.
+├── api
+│   └── api.js
+├── config
+│   └── config.js
+├── index.js
+├── mock
+├── package.json
+├── package-lock.json
+├── README.md
+├── repository
+│   ├── repositoryMongo.js
+│   └── repositoryRedis.js
+├── server
+│   └── server.js
+├── service
+│   └── serviceTwiter.js
+└── test
+    ├── repository
+    │   ├── repositoryMongo.js
+    │   └── repositoryRedis.js
+    ├── server
+    │   └── server.js
+    └── service
         └── serviceTwiter.js
+```
