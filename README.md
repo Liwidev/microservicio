@@ -381,3 +381,31 @@ const res = new response();
 [Mocha](https://www.npmjs.com/package/mocha) es un framework ejecutado en NodeJS que permite el testing asincrono simple. Estas pruebas mocha se ejecutan de manera serial, permitiendo un reporte flexible y preciso, mientras se mapean los errores obtenidos por cada caso de fallo.
 #### Istanbul
 La cobertura es una de las maneras mas visuales de verificar que todas las piesas de nuestro código estan siendo ejecutadas y que no hay código basura. [Istanbul](https://www.npmjs.com/package/istanbul) nos genera usualmente un reporte en HTML el cual se podrá visualizar con mayor claridad la cobertura de nuestro código.
+
+
+## Tree Files
+.<br>
+├── api<br>
+│   └── api.js<br>
+├── config<br>
+│   └── config.js<br>
+├── index.js<br>
+├── mock<br>
+├── package.json<br>
+├── package-lock.json<br>
+├── README.md<br>
+├── repository<br>
+│   ├── repositoryMongo.js<br>
+│   └── repositoryRedis.js<br>
+├── server<br>
+│   └── server.js<br>
+├── service<br>
+│   └── serviceTwiter.js<br>
+└── test<br>
+    ├── repository<br>
+    │   ├── repositoryMongo.js<br>
+    │   └── repositoryRedis.js<br>
+    ├── server<br>
+    │   └── server.js<br>
+    └── service<br>
+        └── serviceTwiter.js
