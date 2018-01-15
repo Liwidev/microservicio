@@ -1,10 +1,5 @@
 # Microservicios
-______  _______                                             _____      _____              
-___   |/  /__(_)________________________________________   ____(_)________(_)_____________
-__  /|_/ /__  /_  ___/_  ___/  __ \_  ___/  _ \_  ___/_ | / /_  /_  ___/_  /_  __ \_  ___/
-_  /  / / _  / / /__ _  /   / /_/ /(__  )/  __/  /   __ |/ /_  / / /__ _  / / /_/ /(__  ) 
-/_/  /_/  /_/  \___/ /_/    \____//____/ \___//_/    _____/ /_/  \___/ /_/  \____//____/  
-        
+
 ## Qué son los Microservicios?
 Microservicios, también conocidos como la arquitectura de microservicios, es un estilo de arquitectura que estructura una aplicación como una colección de servicios débilmente acoplado, en la cual se implementan las capacidades del negocio. Esta arquitectura nos permite entregar y desplegar continuamente aplicaciones grandes y complejas. Tambíen permite a la organización actualizar/evolucionar sus stack de tecnologías.
 
