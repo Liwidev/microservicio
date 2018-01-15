@@ -7,6 +7,7 @@ let clienteMongoDB = undefined;
 const mongoDB = () => (new Promise((resolve, reject) => {
   //Validamos si el cliente esta cacheado, en caso que lo sea lo retornamos,
   //sino generamos uno nuevo
+  /*istanbul ignore if*/
   if (clienteMongoDB) {
     console.log('MongoDB- Cacheado');
     return resolve();
@@ -35,7 +36,7 @@ const getHeroe = (req, res) => {
       const regex = new RegExp(["^", req.params.heroe, "$"].join(""), "i");
       clienteMongoDB.find({ "name.first": regex }).toArray(function (err, docs) {
         if (err) {
-          res.send({ 'error': 'Un error ha ocurrido', 'info': err });
+          res.status(500).send({ 'error': 'Un error ha ocurrido', 'info': err });
         } else {
           res.send(docs);
         }
@@ -66,7 +67,7 @@ const getAllHeroes = (req, res) => {
         return new Promise((resolve,reject) => {
           clienteMongoDB.find({}).toArray(function (err, docs) {
             if (err) {
-              res.send({ 'error': 'Un error ha ocurrido', 'info': err });
+              res.status(500).send({ 'error': 'Un error ha ocurrido', 'info': err });
             } else {
               setInCache('heroes', JSON.stringify(docs));
               resolve(docs);
@@ -83,7 +84,7 @@ const getAllHeroes = (req, res) => {
     }
     ).catch(
     (err) => {
-      console.log({ error: err })
+      res.status(500).send({ error: err });
     }
     );
 

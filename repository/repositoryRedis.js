@@ -5,22 +5,19 @@ const { promisify } = require('util');
 let clienteRedis = undefined;
 
 const cache = () => (new Promise((resolve, reject) => {
+    /*istanbul ignore if*/
     if (clienteRedis) {
         console.log('Redis - Cacheado');
         return resolve(true);
     } else {
-        resolve(new Promise((resolve, reject) => {
-            console.log('Redis - Real');
-            clienteRedis = redis.createClient(optionsRedis.port, optionsRedis.host);
-            clienteRedis.auth('accentureBech', function () {
-                console.log('Cliente autenticado existosamente');
-            });
-            clienteRedis.on('connect', function () {
-                return resolve(false);
-            })
-        }))
-
-
+        console.log('Redis - Real');
+        clienteRedis = redis.createClient(optionsRedis.port, optionsRedis.host);
+        clienteRedis.auth('accentureBech', function () {
+            console.log('Cliente autenticado existosamente');
+        });
+        clienteRedis.on('connect', function () {
+            return resolve(false);
+        })
     }
 }));
 

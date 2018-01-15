@@ -12,7 +12,7 @@ const getTwits = (req, res) => {
         }
     ).catch(
         (err) => {
-            res.send({ status: 500, search: req.params.heroe, err: err })
+            res.status(500).send({ status: 500, search: req.params.heroe, err: err })
         }
         )
 
